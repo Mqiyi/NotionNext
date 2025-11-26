@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isMobile, loadExternalResource } from '@/lib/utils'
@@ -15,8 +14,8 @@ export default function Live2D() {
         'js'
       ).then(() => {
         try {
-          // 初始化 Live2D 模型
-          loadlive2d('live2d', siteConfig('WIDGET_PET_MODEL'))
+          const model = siteConfig('WIDGET_PET_MODEL')
+          loadlive2d('live2d', model)
         } catch (error) {
           console.error('读取 PET 模型失败', error)
         }
@@ -25,7 +24,6 @@ export default function Live2D() {
   }, [theme])
 
   function handleClick() {
-    // 从后台配置获取跳转链接，默认 https://q.2030777.xyz
     const link = siteConfig('WIDGET_PET_CLICK_LINK') || 'https://q.2030777.xyz'
     window.open(link, '_blank')
   }
