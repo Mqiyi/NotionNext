@@ -129,6 +129,8 @@ const nextConfig = {
       'source.unsplash.com',
       'p1.qhimg.com',
       'webmention.io',
+      't.2030777.xyz',
+      'w.2030777.xyz',
       'ko-fi.com'
     ],
     // 图片加载器优化
