@@ -129,6 +129,8 @@ const nextConfig = {
       'source.unsplash.com',
       'p1.qhimg.com',
       'webmention.io',
+      't.2030777.xyz',
+      'w.2030777.xyz',
       'ko-fi.com'
     ],
     // 图片加载器优化
@@ -310,9 +312,7 @@ const nextConfig = {
 
     // Enable source maps in development mode
     if (dev || process.env.NODE_ENV_API === 'development') {
-      // config.devtool = 'source-map'
       config.devtool = 'eval-source-map'
-      // console.log('启动调试 nextjs.config.devtool ', config.devtool)
     }
 
     // 优化模块解析
