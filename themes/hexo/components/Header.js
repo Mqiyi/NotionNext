@@ -166,7 +166,7 @@ const Header = props => {
             </div>
             <div
               onClick={toggleMenuOpen}
-              className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
+              className='w-8 justify-center items-center h-8 cursor-pointer flex'>
               {isOpen ? (
                 <i className='fas fa-times' />
               ) : (
