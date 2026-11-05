@@ -312,21 +312,23 @@ const LayoutSlug = props => {
 
               {/* 分享 */}
               <ShareBar post={post} />
-              {post?.type === 'Post' && (
-                <>
-                  <ArticleCopyright {...props} />
-                  <ArticleRecommend {...props} />
-                  <ArticleAdjacent {...props} />
-                </>
-              )}
+              {post?.type === 'Post' && <ArticleCopyright {...props} />}
             </article>
 
             <div className='pt-4 border-dashed'></div>
 
-            {/* 评论互动 */}
+            {/* 评论互动：紧跟正文和版权，读完即可留言 */}
             <div className='duration-200 overflow-x-auto bg-white dark:bg-hexo-black-gray px-3'>
               <Comment frontMatter={post} />
             </div>
+
+            {/* 推荐与上下篇放在评论之后 */}
+            {post?.type === 'Post' && (
+              <div className='mt-6'>
+                <ArticleRecommend {...props} />
+                <ArticleAdjacent {...props} />
+              </div>
+            )}
           </div>
         )}
       </div>
