@@ -44,7 +44,10 @@ const Header = props => {
     window.addEventListener('scroll', topNavStyleHandler, { passive: true })
     router.events.on('routeChangeComplete', topNavStyleHandler)
     topNavStyleHandler()
+    // 刷新时头图可能晚于导航栏渲染，延迟再判断一次，避免导航栏停留在实色横条状态
+    const navTimers = [300, 1200].map(ms => setTimeout(topNavStyleHandler, ms))
     return () => {
+      navTimers.forEach(clearTimeout)
       router.events.off('routeChangeComplete', topNavStyleHandler)
       window.removeEventListener('scroll', topNavStyleHandler)
     }
