@@ -298,7 +298,7 @@ const LayoutSlug = props => {
   return (
     <>
       <div className='w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray dark:border-black article'>
-        {lock && <ArticleLock validPassword={validPassword} />}
+        {lock && <ArticleLock validPassword={validPassword} unlockError={props.unlockError} />}
 
         {!lock && post && (
           <div className='overflow-x-auto flex-grow mx-auto md:w-full md:px-5 '>
